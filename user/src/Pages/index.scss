@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,900");
+
+$ratingGreyColor: #d0cccd;
+$ratingBlueColor: #00b9ee;
+$ratingDarkColor: #555e63;
+$ratingYellowColor: #f5deb3;
+
+.normal-container {
+  position: absolute;
+  height: 0%;
+  width: 100%;
+}
+
+.smile-rating-container {
+  position: relative;
+  height: 10%;
+  min-width: 120px;
+  max-width: 520px;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  top: 20%;
+}
+
+.submit-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//label
+.rating-label {
+  position: relative;
+  font-size: 1em;
+  text-align: center;
+  flex: 0.34;
+  z-index: 3;
+  font-weight: bold;
+  cursor: pointer;
+  color: $ratingGreyColor;
+  transition: 500ms;
+}
+.rating-label:hover,
+.rating-label:active {
+  color: $ratingGreyColor;
+}
+
+.rating-label-fun {
+  left: -78px;
+  text-align: right;
+}
+
+.rating-label-meh {
+  left: 78px;
+  text-align: left;
+  color: #222;
+}
+.smile-rating-container input {
+  display: none;
+}
+
+.smile-rating-toggle-container {
+}
+
+//container of toggle
+.toggle-rating-pill {
+  position: relative;
+  height: 40px;
+  width: 120px;
+  background: $ratingGreyColor;
+  border-radius: 500px;
+  transition: all 500ms;
+}
+
+//toggle circle
+.smile-rating-toggle {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  background-color: whitesmoke;
+  left: 205px;
+  border-radius: 500px;
+  transition: all 500ms;
+  z-index: 4;
+}
+
+//eye both side
+.rating-eye {
+  position: absolute;
+  height: 9px;
+  width: 5px;
+  top: 9px;
+  background: $ratingGreyColor;
+  border-radius: 500px;
+  z-index: 5;
+  transition: all 440ms;
+  animation: blink-eye 3s infinite;
+}
+
+@keyframes blink-eye {
+  0% {
+    height: 8px;
+    width: 6px;
+    top: 13px;
+  }
+  20% {
+    height: 8px;
+    width: 6px;
+    top: 13px;
+  }
+  40% {
+    height: 8px;
+    width: 6px;
+    top: 13px;
+  }
+  60% {
+    height: 8px;
+    width: 6px;
+    top: 13px;
+  }
+  80% {
+    height: 8px;
+    width: 6px;
+    top: 13px;
+  }
+  90% {
+    height: 8px;
+    width: 6px;
+    top: 13px;
+  }
+  95% {
+    height: 4px;
+    width: 6px;
+    top: 15px;
+  }
+  100% {
+    height: 8px;
+    width: 6px;
+    top: 13px;
+  }
+}
+
+//left eye
+.rating-eye-left {
+  left: 212px;
+}
+//right eye
+.rating-eye-right {
+  left: 225px;
+}
+//mouth
+.mouth {
+  position: absolute;
+  width: 20px;
+  height: 23px;
+  z-index: 6;
+  border: 4px solid $ratingGreyColor;
+  border-radius: 8%;
+  border-bottom-color: rgba(1, 1, 1, 0);
+  border-right-color: rgba(1, 1, 1, 0);
+  border-left-color: rgba(1, 1, 1, 0);
+  top: 28px;
+  left: 212px;
+  transition: all 500ms;
+}
+
+/*
+Toggle Changes
+*/
+
+#meh:checked ~ .rating-label-meh {
+  color: $ratingDarkColor;
+}
+#fun:checked ~ .rating-label-meh {
+  color: $ratingGreyColor;
+}
+#fun:checked ~ .mouth {
+  border: 4px solid $ratingYellowColor;
+  border-bottom-color: rgba(1, 1, 1, 0);
+  border-right-color: rgba(1, 1, 1, 0);
+  border-left-color: rgba(1, 1, 1, 0);
+  top: 11px;
+  left: 289px;
+  transform: rotateX(180deg);
+  border-radius: 100%;
+}
+
+#fun:checked ~ .rating-label-fun {
+  color: $ratingDarkColor;
+}
+#fun:checked ~ .smile-rating-toggle {
+  left: 282px;
+}
+
+#fun:checked ~ .rating-eye-left {
+  left: 289px;
+}
+#fun:checked ~ .rating-eye-right {
+  left: 303px;
+}
+
+#fun:checked ~ .toggle-rating-pill {
+  background-color: $ratingYellowColor;
+}
+
+#fun:checked ~ .rating-eye {
+  background-color: $ratingYellowColor;
+}
+
+@media only screen and (max-width: 524px) {
+  .normal-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .smile-rating-container {
+    position: relative;
+    height: 10%;
+    width: 490px;
+    margin: auto;
+    font-family: "Roboto", sans-serif;
+    top: 20%;
+  }
+
+  .submit-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rating-label {
+    position: relative;
+    font-size: 1.6em;
+    text-align: center;
+    flex: 0.34;
+    z-index: 3;
+    font-weight: bold;
+    cursor: pointer;
+    color: $ratingGreyColor;
+    transition: 500ms;
+  }
+  .rating-label:hover,
+  .rating-label:active {
+    color: $ratingGreyColor;
+  }
+  .rating-label-fun {
+    left: -58px;
+    text-align: right;
+  }
+  .rating-label-meh {
+    left: 50px;
+    text-align: left;
+    color: #222;
+  }
+  .smile-rating-container input {
+    display: none;
+  }
+
+  .smile-rating-toggle-container {
+  }
+
+  .toggle-rating-pill {
+    position: relative;
+    height: 65px;
+    width: 165px;
+    background: $ratingGreyColor;
+    border-radius: 500px;
+    transition: all 500ms;
+  }
+
+  .smile-rating-toggle {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background-color: white;
+    left: 168px;
+    border-radius: 500px;
+    transition: all 500ms;
+    z-index: 4;
+  }
+  .rating-eye {
+    position: absolute;
+    height: 12px;
+    width: 8px;
+    background: $ratingGreyColor;
+    border-radius: 500px;
+    top: 22px;
+    z-index: 5;
+    transition: all 440ms;
+  }
+  .rating-eye-left {
+    left: 180px;
+  }
+  .rating-eye-right {
+    left: 201px;
+  }
+
+  .mouth {
+    position: absolute;
+    width: 28px;
+    height: 20px;
+    z-index: 6;
+    border: 4px solid $ratingGreyColor;
+    border-radius: 10%;
+    border-bottom-color: rgba(1, 1, 1, 0);
+    border-right-color: rgba(1, 1, 1, 0);
+    border-left-color: rgba(1, 1, 1, 0);
+    top: 42px;
+    left: 177px;
+    transition: all 500ms;
+  }
+
+  /*
+	Toggle Changes
+	*/
+
+  #meh:checked ~ .rating-label-meh {
+    color: $ratingDarkColor;
+  }
+  #fun:checked ~ .rating-label-meh {
+    color: $ratingGreyColor;
+  }
+  #fun:checked ~ .mouth {
+    border: 4px solid $ratingYellowColor;
+    border-bottom-color: rgba(1, 1, 1, 0);
+    border-right-color: rgba(1, 1, 1, 0);
+    border-left-color: rgba(1, 1, 1, 0);
+    top: 23px;
+    left: 275px;
+    transform: rotateX(180deg);
+    border-radius: 100%;
+  }
+
+  #fun:checked ~ .rating-label-fun {
+    color: $ratingDarkColor;
+  }
+  #fun:checked ~ .smile-rating-toggle {
+    left: 266px;
+  }
+
+  #fun:checked ~ .rating-eye-left {
+    left: 265px;
+  }
+  #fun:checked ~ .rating-eye-right {
+    left: 300px;
+  }
+
+  #fun:checked ~ .toggle-rating-pill {
+    background-color: $ratingYellowColor;
+  }
+
+  #fun:checked ~ .rating-eye {
+    background-color: $ratingYellowColor;
+  }
+}
