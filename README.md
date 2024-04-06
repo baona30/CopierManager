@@ -18,7 +18,8 @@ MDB-UI KIT
 ### DATABASE SCHEMA
 AWS HOST
 WORKBENCH SQL (VISUAL DATABASE DESIGN TOOL)
-See attached.
+
+See below.
 # Documentation
 Click [here](https://github.com/baona30/CopierManager/blob/main/157A_Report.docx)
 # Presentation
